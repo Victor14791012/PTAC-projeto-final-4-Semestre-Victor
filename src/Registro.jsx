@@ -46,7 +46,13 @@ export default function Registro() {
     console.log(novoVideo);
     console.log(Lista);
   };
-
+  
+  // Função para excluir um vídeo da lista
+  const deletar = (idToDelete) => {
+    const novaLista = Lista.filter((video) => video.id !== idToDelete);
+    setLista(novaLista);
+    
+  };
 
 
   return (
