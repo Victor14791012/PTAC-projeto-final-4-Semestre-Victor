@@ -29,7 +29,21 @@ const Detalhe = () => {
         </span>
       </h1>
 
-      {/* Adicione as demais informações do vídeo aqui... */}
+      <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+            <Link to="/">Home</Link>
+          </li>
+          <li className="breadcrumb-item" aria-current="page">
+            <Link to="/destaque">Em Destaque</Link>
+          </li>
+          <li className="breadcrumb-item" aria-current="page">
+            <Link to="/registro">Registrar Vídeo</Link>
+          </li>
+        </ol>
+      </nav>
+
+      {}
     </div>
   );
 };
