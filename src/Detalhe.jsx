@@ -22,7 +22,14 @@ const Detalhe = () => {
 
   return (
     <div className="container-xl pt-4 transparente text-white">
-      {/* Restante do código... */}
+      <h1 className="text-start text-white">
+        Detalhes do Vídeo{" "}
+        <span className="px-2 fs-4 fw-normal bg-danger text-white">
+          Tema: Geek e Animes
+        </span>
+      </h1>
+
+      {/* Adicione as demais informações do vídeo aqui... */}
     </div>
   );
 };
