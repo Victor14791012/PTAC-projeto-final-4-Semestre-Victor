@@ -62,7 +62,7 @@ const Destaque = () => {
                 </div>
               </div>
             </div>
-          ))  }  
+          )).slice(-4)   }  
         </div>
       </div>
 
