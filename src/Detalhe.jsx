@@ -43,7 +43,26 @@ const Detalhe = () => {
         </ol>
       </nav>
 
-      {}
+      <div>
+        <h5>Nome: {video.nomeVideo}</h5>
+        <p>Descrição: {video.descricao}</p>
+        <p>Duração: {video.duracao}</p>
+        <p>Tema: {video.tema}</p>
+        {video.linkYoutube && (
+          <div>
+            <p>Vídeo:</p>
+            <iframe
+              width="100%"
+              height="315"
+              src={`https://www.youtube.com/embed/${video.linkYoutube}`}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
+      </div>
+      
     </div>
   );
 };
