@@ -1,4 +1,3 @@
-// Detalhe.jsx
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 
@@ -21,9 +20,10 @@ const Detalhe = () => {
   }
 
   return (
-    <div className="container-xl pt-4 transparente text-white">
+    <div className="container-xl pt-4 transparente text-white" >
+     
       <h1 className="text-start text-white">
-        Detalhes do Vídeo{" "}
+      Detalhes do Vídeo  {" "}
         <span className="px-2 fs-4 fw-normal bg-danger text-white">
           Tema: Geek e Animes
         </span>
@@ -32,7 +32,7 @@ const Detalhe = () => {
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-            <Link to="/">Home</Link>
+             <Link to="/">Home</Link>
           </li>
           <li className="breadcrumb-item" aria-current="page">
             <Link to="/destaque">Em Destaque</Link>
@@ -62,7 +62,6 @@ const Detalhe = () => {
           </div>
         )}
       </div>
-      
     </div>
   );
 };

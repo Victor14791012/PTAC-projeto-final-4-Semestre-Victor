@@ -11,7 +11,6 @@ const Destaque = () => {
     setListaVideos(listaLocalStorage);
   }, []);
 
-  
   return (
     <div className="container-xl pt-4 transparente">
       <h1 className="text-start text-white">
