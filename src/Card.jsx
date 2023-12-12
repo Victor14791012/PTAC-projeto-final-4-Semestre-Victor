@@ -11,7 +11,7 @@ const Card = ({ video }) => {
               width="100%"
               height="100%"
               className="rounded-4"
-              src={`https://www.youtube.com/embed/${video.linkYoutube.slice(17)}`}
+              src={`https://www.youtube.com/embed/${video.linkYoutube}`}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
