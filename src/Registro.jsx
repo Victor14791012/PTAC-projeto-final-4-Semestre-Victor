@@ -64,7 +64,7 @@ export default function Registro() {
         </Link>
         <Link to="/destaque">Destaque</Link>
         <div className="bg-dark text-white rounded-2 p-2">
-          <h1>Portal Geek</h1>
+          <h1>Registrar</h1>
           <h6>Adicione seus vídeos favoritos do YouTube</h6>
 
           <form onSubmit={salvar}>

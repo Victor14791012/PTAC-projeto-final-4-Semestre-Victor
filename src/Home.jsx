@@ -15,9 +15,9 @@ const Home = () => {
   return (
     <div className="container-xl pt-4 transparente">
       <h1 className="text-start text-white">
-        Galeria de Animes{" "}
+        Galeria de Vídeos{" "}
         <span className="px-2 fs-4 fw-normal bg-danger text-white">
-          Tema: Geek e Animes
+          Tema: Tanto Faz
         </span>
       </h1>
 
