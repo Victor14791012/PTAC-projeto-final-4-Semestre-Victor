@@ -6,10 +6,10 @@ const Detalhe = () => {
   const [video, setVideo] = useState(null);
 
   useEffect(() => {
-    // Obtendo a lista do armazenamento local
+    
     const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
     
-    // Encontrando o vídeo com base no ID
+    
     const videoEncontrado = listaLocalStorage.find((v) => v.id === parseInt(id));
 
     setVideo(videoEncontrado);

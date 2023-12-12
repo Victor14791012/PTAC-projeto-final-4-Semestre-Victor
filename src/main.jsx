@@ -1,4 +1,4 @@
-// main.jsx
+
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -15,7 +15,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />} />
         <Route path="/detalhe/:id" element={<Detalhe />}></Route>
         <Route path="/destaque" element={<Destaque />} />
-       
         <Route path="/registro" element={<Registro />} />
       </Routes>
     </BrowserRouter>

@@ -65,8 +65,7 @@ const Destaque = () => {
         </div>
       </div>
 
-      {/* Adicionando o componente Detalhe aqui para renderização */}
-      <Detalhe listaVideos={listaVideos} />
+      
     </div>
   );
 };

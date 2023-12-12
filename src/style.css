@@ -46,8 +46,8 @@ body {
 }
 
 .card-jogo p {
-    font-size: 1rem; /* Tamanho da fonte do texto */
-    margin-bottom: 15px; /* Espaçamento inferior do texto */
+    font-size: 1rem;
+    margin-bottom: 15px; 
 }
 
 .card-jogo img {

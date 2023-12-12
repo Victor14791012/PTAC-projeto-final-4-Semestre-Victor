@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Registro() {
   const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
@@ -9,33 +9,33 @@ export default function Registro() {
   const [tema, setTema] = useState("");
   const [linkYoutube, setLinkYoutube] = useState("");
   const [Lista, setLista] = useState(listaLocalStorage || []);
-  const [id, setId] = useState(1);
+  const[id, setId] = useState(listaLocalStorage[listaLocalStorage.length-1]?.id + 1 || 1);
 
-  useEffect(() => {
-    localStorage.setItem("Lista", JSON.stringify(Lista));
-  }, [Lista]);
+  useEffect(() => { localStorage.setItem("Lista", JSON.stringify(Lista)) }, [Lista]);
+  
+const navigate = useNavigate();
 
-  // Função para adicionar uma atividade
-  const salvar = (e) => {
+  const salvar = async (e) => {
     e.preventDefault();
 
-    // Extrair a parte após a última barra do link do YouTube
+    
     const linkYoutubeID = linkYoutube.substring(linkYoutube.lastIndexOf("/") + 1);
 
-    // Adicionar um novo objeto à lista
+    
     const novoVideo = {
       nomeVideo: nomeVideo,
       descricao: descricao,
       duracao: duracao,
       tema: tema,
-      linkYoutube: linkYoutubeID, // Usar apenas a parte após a última barra
+      linkYoutube: linkYoutubeID, 
       id: id
     };
 
-    setLista([...Lista, novoVideo]);
-    setId(id + 1); // Incrementar o contador de IDs
+    await setLista([...Lista, novoVideo]);
+    setId(id + 1);
+    Navigate("/")
 
-    // Limpar os campos do formulário
+    
     setNomeVideo("");
     setDescricao("");
     setDuracao("");
@@ -45,16 +45,12 @@ export default function Registro() {
     alert(nomeVideo);
     console.log(novoVideo);
     console.log(Lista);
-  };
 
-  // Função para excluir um vídeo da lista
-  const deletar = (idToDelete) => {
-    const novaLista = Lista.filter((video) => video.id !== idToDelete);
-    setLista(novaLista);
     
   };
 
-  // Função para excluir todos os vídeos da lista
+ 
+
   const deletarTodos = () => {
     setLista([]);
     alert("items deletados");
