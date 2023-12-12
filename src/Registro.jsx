@@ -13,7 +13,7 @@ export default function Registro() {
 
   useEffect(() => { localStorage.setItem("Lista", JSON.stringify(Lista)) }, [Lista]);
   
-const navigate = useNavigate();
+
 
   const salvar = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const navigate = useNavigate();
 
     await setLista([...Lista, novoVideo]);
     setId(id + 1);
-    Navigate("/")
+   
 
     
     setNomeVideo("");
