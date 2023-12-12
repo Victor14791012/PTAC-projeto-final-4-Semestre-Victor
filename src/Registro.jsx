@@ -19,7 +19,7 @@ export default function Registro() {
     e.preventDefault();
 
     
-    const linkYoutubeID = linkYoutube.substring(linkYoutube.lastIndexOf("/") + 1);
+    //const linkYoutubeID = linkYoutube.substring(linkYoutube.lastIndexOf("/") + 1);
 
     
     const novoVideo = {
@@ -27,7 +27,7 @@ export default function Registro() {
       descricao: descricao,
       duracao: duracao,
       tema: tema,
-      linkYoutube: linkYoutubeID, 
+      linkYoutube: linkYoutube , 
       id: id
     };
 

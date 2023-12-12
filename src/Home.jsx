@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Card from "./Card"; // Importando o componente Card
+import Card from "./Card"; 
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 const Home = () => {

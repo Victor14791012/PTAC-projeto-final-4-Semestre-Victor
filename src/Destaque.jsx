@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
+import Card from "./Card"; 
 
 const Destaque = () => {
   const [listaVideos, setListaVideos] = useState([]);
@@ -22,7 +22,7 @@ const Destaque = () => {
 
       <nav aria-label="breadcrumb   ">
         <ol className="breadcrumb">
-          <li className="breadcrumb-item">Home</li>
+         
           <li className="breadcrumb-item" aria-current="page">
             <Link to="/">Home</Link>
           </li>
@@ -38,30 +38,10 @@ const Destaque = () => {
         <div className="row m-2">
           {listaVideos.map((video) => (
             <div key={video.id} className="col-md-4">
-              <div className="card-jogo mb-4 zoom shadow-lg colorful-border" id="card-meu">
-                <div className="card-body">
-                  <h5 className="card-title">{video.nomeVideo}</h5>
-
-                  {video.linkYoutube && (
-                    <div>
-                      <iframe
-                        width="100%"
-                        height="315"
-                        src={`https://www.youtube.com/embed/${video.linkYoutube}`}
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  )}
-
-                  <Link to={`/detalhe/${video.id}`} className="btn btn-primary">
-                    Detalhe
-                  </Link>
-                </div>
-              </div>
+              {/* Renderizando o componente Card */}
+              <Card video={video} />
             </div>
-          )).slice(-4)   }  
+          )).slice(-4)   } 
         </div>
       </div>
 
