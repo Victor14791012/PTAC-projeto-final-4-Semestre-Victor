@@ -1,59 +1,61 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-export default function Registro() {
-  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista"));
+const Registro = () => {
+  // Inicializa listaLocalStorage como um array vazio se não houver dados no localStorage
+  const listaLocalStorage = JSON.parse(localStorage.getItem("Lista")) || [];
+
   const [nomeVideo, setNomeVideo] = useState("");
   const [descricao, setDescricao] = useState("");
   const [duracao, setDuracao] = useState("");
   const [tema, setTema] = useState("");
   const [linkYoutube, setLinkYoutube] = useState("");
-  const [Lista, setLista] = useState(listaLocalStorage || []);
-  const[id, setId] = useState(listaLocalStorage[listaLocalStorage.length-1]?.id + 1 || 1);
+  const [Lista, setLista] = useState(listaLocalStorage);
 
-  useEffect(() => { localStorage.setItem("Lista", JSON.stringify(Lista)) }, [Lista]);
-  
+  // Define o ID com base no último item da lista ou usa 1 como padrão
+  const [id, setId] = useState(listaLocalStorage?.[listaLocalStorage.length - 1]?.id + 1 || 1);
 
+  // Atualiza o localStorage sempre que a lista é alterada
+  useEffect(() => {
+    localStorage.setItem("Lista", JSON.stringify(Lista));
+  }, [Lista]);
 
   const salvar = async (e) => {
     e.preventDefault();
 
-    
+    // Extrai o ID do vídeo do link do YouTube
     const linkYoutubeID = linkYoutube.substring(linkYoutube.lastIndexOf("/") + 1);
 
-    
+    // Cria um novo objeto de vídeo
     const novoVideo = {
       nomeVideo: nomeVideo,
       descricao: descricao,
       duracao: duracao,
       tema: tema,
-      linkYoutube: linkYoutubeID , 
-      id: id
+      linkYoutube: linkYoutubeID,
+      id: id,
     };
 
+    // Adiciona o novo vídeo à lista
     await setLista([...Lista, novoVideo]);
     setId(id + 1);
-   
 
-    
+    // Limpa os campos do formulário
     setNomeVideo("");
     setDescricao("");
     setDuracao("");
     setTema("");
     setLinkYoutube("");
 
+    // Exibe um alerta e loga os dados
     alert(nomeVideo);
     console.log(novoVideo);
     console.log(Lista);
-
-    
   };
-
- 
 
   const deletarTodos = () => {
     setLista([]);
-    alert("items deletados");
+    alert("Itens deletados");
   };
 
   return (
@@ -134,9 +136,9 @@ export default function Registro() {
             </button>
           </form>
         </div>
-
-        
       </div>
     </div>
   );
-}
+};
+
+export default Registro;
